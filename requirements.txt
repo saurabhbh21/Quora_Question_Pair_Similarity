@@ -1,0 +1,5 @@
+pandas==0.24.0
+numpy==1.16.1
+sklearn==0.20.0
+spacy==2.0.18
+tensorflow==1.13.1
