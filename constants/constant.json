@@ -1,0 +1,19 @@
+{
+    "dataset_dir":"./question-pairs-dataset" ,
+
+    "dataset_filename": "questions.csv",
+    
+    "features": {
+            "feature1":"question1", 
+            "feature2":"question2"
+        },
+    
+
+    "labels": {
+            "label1": "is_duplicate"
+        },
+
+    "glove_path": "./glove_model/glove.6B.300d.txt",
+
+    "checkpoint_path": "./model_files/weights.{epoch:02d}-{val_loss:.2f}.ckpt"
+}

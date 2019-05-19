@@ -1,5 +1,6 @@
 pandas==0.24.0
 numpy==1.16.1
-sklearn==0.20.0
+scikit-learn==0.20.0
 spacy==2.0.18
-tensorflow==1.13.1
+flask==1.0.2
+tensorflow-gpu==1.13.1
