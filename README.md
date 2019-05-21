@@ -9,5 +9,6 @@ main_train.py:
 Python file sending json request for training the model for 'Whether Pair of Questions have same Context' and receiving validation accuracy as json
 
 main_predict.py: 
+
 Python file sending json request for predicting the 'Whether Pair of Questions have same Context' and receiving result as same/ different (1/0) as json.
 
