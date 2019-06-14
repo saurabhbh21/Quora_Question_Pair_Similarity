@@ -13,8 +13,8 @@ setup(
    author_email='saurabhbh21@gmail.com',
    packages=['QPSimilarity'],  #same as name
    install_requires=[required], #external packages as dependencies from requirements.txt
-#    scripts=[
-#             'scripts/cool',
-#             'scripts/skype',
-#            ]
+   scripts=[
+            'scripts/download.sh',
+            
+           ]
 )

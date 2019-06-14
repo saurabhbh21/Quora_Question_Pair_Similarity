@@ -1,3 +1,4 @@
+import os 
 import numpy as np 
 import tensorflow as tf
 
@@ -45,8 +46,15 @@ class Train:
         
         loss_and_metric = classification_model.evaluate(x_index_train, y_train)
         print('Loss and metric:', loss_and_metric)
+        
+        loss = loss_and_metric[0]
+        metric = loss_and_metric[1]
 
-        return loss_and_metric[1]
+        checkpoint_dir = os.path.dirname(constant.checkpoint_path)
+        trained_model_path = tf.train.latest_checkpoint(checkpoint_dir)
+        print('Model Path String::', trained_model_path)
+
+        return metric
 
 
 

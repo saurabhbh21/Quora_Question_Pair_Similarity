@@ -77,6 +77,9 @@ class CreateModel(NeuralNetwork):
 
     
     def createCheckpoint(self):
+        if not os.path.exists(self.checkpoint_dir):
+            os.makedirs(self.checkpoint_dir)
+
         cp_callback = tf.keras.callbacks.ModelCheckpoint(
             self.checkpoint_path, verbose=1,
             save_weights_only=True, save_best_only=True,  #save best weights
@@ -85,6 +88,7 @@ class CreateModel(NeuralNetwork):
 
         return cp_callback
         
+    
     
     def rawModel(self, word_to_vec_map, word_to_index):
         encoding_model = NeuralNetwork(word_to_vec_map, word_to_index)
