@@ -1,0 +1,21 @@
+
+FROM tensorflow_uwsgi_nginx:latest-py35
+
+#Run setuptools
+RUN python3 setup.py develop
+
+# Make /app/* available to be imported by Python globally to better support several use cases like Alembic migrations.
+ENV PYTHONPATH=/
+
+EXPOSE 5000
+
+# Executable permission entrypoint that will generate Nginx additional configs
+#COPY ./scripts/entrypoint.sh /scripts/entrypoint.sh
+RUN chmod +x /scripts/entrypoint.sh
+
+ENTRYPOINT ["/scripts/entrypoint.sh"]
+
+# Run the start script provided by the parent image tiangolo/uwsgi-nginx.
+# It will check for an /app/prestart.sh script (e.g. for migrations)
+# And then will start Supervisor, which in turn will start Nginx and uWSGI
+CMD ["/scripts/start.sh"]
