@@ -15,7 +15,3 @@ Python file sending json request for training the model for 'Whether Pair of Que
 
 Python file sending json request for predicting the 'Whether Pair of Questions have same Context' and receiving result as same/ different (1/0) as json.
 
-
-
-## To-Do Stuffs
-Add script for downloading pretrained model file (glove 6B.300d) in folder **./model** and create **model_file** (for storing trained model weights)
